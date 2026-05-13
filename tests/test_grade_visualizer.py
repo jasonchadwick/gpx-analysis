@@ -341,5 +341,6 @@ class TestNormalizationBehaviour:
         kde = gaussian_kde(grades, weights=weights)
         x = np.linspace(-30, 30, 2000)
         dx = x[1] - x[0]
+        # np.trapezoid was introduced in NumPy 2.0; np.trapz was removed in 2.0.
         integral = np.trapezoid(kde(x), x) if hasattr(np, "trapezoid") else np.trapz(kde(x), x)
         assert integral == pytest.approx(1.0, abs=0.02)

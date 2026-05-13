@@ -183,7 +183,6 @@ class GradeVisualizer:
             colour = self._colour(idx)
             if split_surface:
                 data = route.get_grades(split_surface=True)
-                first = True
                 for surface, (grades, dists) in data.items():
                     if len(grades) < 2:
                         continue
@@ -191,9 +190,7 @@ class GradeVisualizer:
                     if y is None:
                         continue
                     style = _SURFACE_STYLE.get(surface, {})
-                    lbl = f"{label} ({surface})" if not first else f"{label} ({surface})"
-                    ax.plot(x, y, color=colour, label=lbl, **style)
-                    first = False
+                    ax.plot(x, y, color=colour, label=f"{label} ({surface})", **style)
             else:
                 grades, dists = route.get_grades(split_surface=False)
                 if len(grades) < 2:

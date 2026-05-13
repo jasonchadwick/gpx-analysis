@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="gpx-analysis-test"
+     xmlns="http://www.topografix.com/GPX/1/1">
+  <!--
+    Hilly route with two tracks:
+      Track 1 (paved)  : ascending, grades roughly 4.5 – 6 %
+      Track 2 (unpaved): descending, grades roughly -7.5 to -8 %
+
+    Elevation math (haversine ≈ 1 000 m per 0.009 01° lat step):
+      Paved   (47.6000→47.6090): (45 - 0)   / ~1000 * 100 ≈ 4.5 %
+              (47.6090→47.6180): (95 - 45)  / ~1000 * 100 ≈ 5.0 %
+              (47.6180→47.6270): (155 - 95) / ~1000 * 100 ≈ 6.0 %
+      Unpaved (47.6270→47.6360): (75 - 155) / ~1000 * 100 ≈ -8.0 %
+              (47.6360→47.6450): (0 - 75)   / ~1000 * 100 ≈ -7.5 %
+              (47.6450→47.6540): (-75 - 0)  / ~1000 * 100 ≈ -7.5 %
+  -->
+  <trk>
+    <name>Hilly Mixed Route – Paved Ascent</name>
+    <type>paved</type>
+    <trkseg>
+      <trkpt lat="47.60000" lon="-122.35000"><ele>0.0</ele></trkpt>
+      <trkpt lat="47.60901" lon="-122.35000"><ele>45.0</ele></trkpt>
+      <trkpt lat="47.61802" lon="-122.35000"><ele>95.0</ele></trkpt>
+      <trkpt lat="47.62703" lon="-122.35000"><ele>155.0</ele></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Hilly Mixed Route – Unpaved Descent</name>
+    <type>unpaved</type>
+    <trkseg>
+      <trkpt lat="47.62703" lon="-122.35000"><ele>155.0</ele></trkpt>
+      <trkpt lat="47.63604" lon="-122.35000"><ele>75.0</ele></trkpt>
+      <trkpt lat="47.64505" lon="-122.35000"><ele>0.0</ele></trkpt>
+      <trkpt lat="47.65406" lon="-122.35000"><ele>-75.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
